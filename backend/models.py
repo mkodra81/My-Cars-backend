@@ -1,16 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
-import os
-from django.utils.timezone import now
-
-
-def upload_to(instance, filename):
-    ext = filename.split('.')[-1]
-    return os.path.join('cars', f"{instance.id}_{int(now().timestamp())}.{ext}")
 
 
 class Car(models.Model):
-    """Car model for managing user vehicles"""
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='cars')
     brand = models.CharField(max_length=100)
     model = models.CharField(max_length=100)

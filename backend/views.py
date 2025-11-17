@@ -13,13 +13,9 @@ from .serializers import (
 from rest_framework.decorators import action
 
 
-# ==========================
-# User ViewSet (Registration & Account Management)
-# ==========================
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = RegisterSerializer
-
 
     def get_serializer_class(self):
         if self.action == 'create':
@@ -32,7 +28,6 @@ class UserViewSet(viewsets.ModelViewSet):
         return [IsAuthenticated()]
 
     def create(self, request, *args, **kwargs):
-        """Register a new user"""
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
@@ -40,7 +35,6 @@ class UserViewSet(viewsets.ModelViewSet):
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
     def destroy(self, request, *args, **kwargs):
-        """Delete user account - only the account owner can delete their own account"""
         user = self.get_object()
         if user != request.user and not request.user.is_staff:
             return Response({"detail": "Not authorized to delete this account."}, status=status.HTTP_403_FORBIDDEN)
@@ -48,9 +42,6 @@ class UserViewSet(viewsets.ModelViewSet):
         return Response({"detail": "Account deleted successfully."}, status=status.HTTP_204_NO_CONTENT)
 
 
-# ==========================
-# Get Current User
-# ==========================
 class MeView(APIView):
     permission_classes = [IsAuthenticated]
 
@@ -59,9 +50,6 @@ class MeView(APIView):
         return Response(serializer.data)
 
 
-# ==========================
-# Change Password
-# ==========================
 class ChangePasswordView(APIView):
     permission_classes = [IsAuthenticated]
 
@@ -78,12 +66,6 @@ class ChangePasswordView(APIView):
         return Response({"detail": "Password updated successfully."})
 
 
-# ==========================
-
-
-# ==========================
-# Car ViewSet (CRUD)
-# ==========================
 class CarViewSet(viewsets.ModelViewSet):
     serializer_class = CarSerializer
     permission_classes = [IsAuthenticated]

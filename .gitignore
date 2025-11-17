@@ -61,6 +61,3 @@ dmypy.json
 
 # Pyre
 .pyre/
-
-
-.env

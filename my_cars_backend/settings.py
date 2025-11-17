@@ -74,37 +74,16 @@ TEMPLATES = [
 WSGI_APPLICATION = 'my_cars_backend.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
-# Support for DATABASE_URL environment variable (for PostgreSQL, MySQL, etc.)
-# Format examples:
-# PostgreSQL: postgresql://user:password@localhost:5432/dbname
-# MySQL: mysql://user:password@localhost:3306/dbname
-# SQLite: sqlite:///path/to/db.sqlite3
-
-if os.environ.get('DATABASE_URL'):
-    # Parse DATABASE_URL for production/staging environments
-    import dj_database_url
-    DATABASES = {
-        'default': dj_database_url.config(
-            default=os.environ.get('DATABASE_URL'),
-            conn_max_age=600,
-            conn_health_checks=True,
-        )
+DATABASES = {
+    'default': {
+        'ENGINE': os.environ.get('DB_ENGINE', 'django.db.backends.sqlite3'),
+        'NAME': os.environ.get('DB_NAME', str(BASE_DIR / 'db.sqlite3')),
+        'USER': os.environ.get('DB_USER', ''),
+        'PASSWORD': os.environ.get('DB_PASSWORD', ''),
+        'HOST': os.environ.get('DB_HOST', ''),
+        'PORT': os.environ.get('DB_PORT', ''),
     }
-else:
-    # Default to SQLite for development
-    DATABASES = {
-        'default': {
-            'ENGINE': os.environ.get('DB_ENGINE', 'django.db.backends.sqlite3'),
-            'NAME': os.environ.get('DB_NAME', str(BASE_DIR / 'db.sqlite3')),
-            'USER': os.environ.get('DB_USER', ''),
-            'PASSWORD': os.environ.get('DB_PASSWORD', ''),
-            'HOST': os.environ.get('DB_HOST', ''),
-            'PORT': os.environ.get('DB_PORT', ''),
-        }
-    }
+}
 
 
 # Password validation

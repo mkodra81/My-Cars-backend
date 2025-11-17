@@ -6,18 +6,12 @@ from .models import Car
 from django.contrib.auth.password_validation import validate_password
 
 
-# ==========================
-# User Serializer
-# ==========================
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'username', 'email', 'is_superuser', 'first_name', 'last_name', 'date_joined']
 
 
-# ==========================
-# Register Serializer
-# ==========================
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, required=True)
 
@@ -34,17 +28,11 @@ class RegisterSerializer(serializers.ModelSerializer):
         return user
 
 
-# ==========================
-# Change Password Serializer
-# ==========================
 class ChangePasswordSerializer(serializers.Serializer):
     old_password = serializers.CharField(required=True)
     new_password = serializers.CharField(required=True, validators=[validate_password])
 
 
-# ==========================
-# Car Serializer
-# ==========================
 class CarSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     permissions = [IsAuthenticated]
