@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d619c9f0-1f9b-4eb3-940f-04f08637eef0" name="Changes" comment="Add Django backend structure with models, views, and API endpoints">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/my_cars_backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/my_cars_backend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/migrations/0002_remove_car_image.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_api.py" beforeDir="false" />
-    </list>
+    <list default="true" id="d619c9f0-1f9b-4eb3-940f-04f08637eef0" name="Changes" comment="Add Django backend structure with models, views, and API endpoints" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -146,6 +138,7 @@
       <workItem from="1763417956111" duration="182000" />
       <workItem from="1763418158184" duration="1087000" />
       <workItem from="1763479838209" duration="504000" />
+      <workItem from="1763640015006" duration="851000" />
     </task>
     <task id="LOCAL-00001" summary="Add initial project setup with Django models, serializers, and API endpoints">
       <option name="closed" value="true" />
