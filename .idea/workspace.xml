@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d619c9f0-1f9b-4eb3-940f-04f08637eef0" name="Changes" comment="Add Django backend structure with models, views, and API endpoints">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/admin.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +141,8 @@
       <workItem from="1763417956111" duration="182000" />
       <workItem from="1763418158184" duration="1087000" />
       <workItem from="1763479838209" duration="504000" />
-      <workItem from="1763640015006" duration="2169000" />
+      <workItem from="1763640015006" duration="2617000" />
+      <workItem from="1763731363730" duration="638000" />
     </task>
     <task id="LOCAL-00001" summary="Add initial project setup with Django models, serializers, and API endpoints">
       <option name="closed" value="true" />
